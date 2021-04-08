@@ -14,7 +14,13 @@ const slack = {
   signingSecret: process.env.SLACK_SIGNING_SECRET
 }
 
+const youtube = {
+  version: 'v3',
+  auth: process.env.YOUTUBE_API_KEY
+}
+
 module.exports = {
   salesforce,
+  youtube,
   slack
 }
