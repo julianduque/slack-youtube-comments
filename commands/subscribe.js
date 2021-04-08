@@ -77,7 +77,7 @@ module.exports = {
         videoUrl: text,
         description: snippet?.description,
         thumbnailUrl: snippet?.thumbnails?.maxres?.url,
-        tags: snippet?.tags.join(',').substring(0, 255),
+        tags: snippet?.tags?.join(',').substring(0, 255),
         slackUserId: userId,
         ...statistics
       })
