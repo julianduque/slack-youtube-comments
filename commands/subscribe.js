@@ -37,6 +37,7 @@ async function saveSubscription (video) {
     ExternalKey__c: `${video.slackUserId}:${video.videoId}`,
     Title__c: video.title,
     SlackUserId__c: video.slackUserId,
+    SlackUser__c: video.slackUsername,
     VideoDescription__c: video.description,
     VideoId__c: video.videoId,
     VideoURL__c: video.videoUrl,
@@ -55,7 +56,7 @@ module.exports = {
   name: '/yt-subscribe',
   handler: async ({ command, client, ack }) => {
     await ack()
-    const { text, user_id: userId } = command
+    const { text, user_id: userId, user_name: userName } = command
 
     if (!youtubeUrl.valid(text)) {
       await client.chat.postMessage({
@@ -79,6 +80,7 @@ module.exports = {
         thumbnailUrl: snippet?.thumbnails?.maxres?.url,
         tags: snippet?.tags?.join(',').substring(0, 255),
         slackUserId: userId,
+        slackUsername: userName,
         ...statistics
       })
     } catch (err) {
