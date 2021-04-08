@@ -2,7 +2,6 @@
 
 const { App, LogLevel } = require('@slack/bolt')
 const pino = require('pino')
-const Salesforce = require('./lib/salesforce')
 const commands = require('./commands')
 const config = require('./config')
 const port = process.env.PORT || 5000
