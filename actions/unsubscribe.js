@@ -49,12 +49,15 @@ module.exports = {
             type: 'section',
             text: {
               type: 'mrkdwn',
-              text: `You'll not receive more comments notifications from 📺 *${videoInfo.Title__c}*
+              text: `You'll not receive more comment notifications from:\n📺 *${videoInfo.Title__c}*
                 `
             }
+          },
+          {
+            type: 'divider'
           }
         ],
-        text: `You'll not receive more comments notifications from ${videoInfo.Title__c}`
+        text: `You'll not receive more comment notifications from ${videoInfo.Title__c}`
       })
     } catch (err) {
       logger.error(`Error Unsubscribing from Video: ${err.message}`)
@@ -66,7 +69,7 @@ module.exports = {
             type: 'section',
             text: {
               type: 'mrkdwn',
-              text: `❌ I failed to unsubscribe from Video - *Reason*: ${err.message}`
+              text: `❌ I failed to unsubscribe from Video.\n\n*Reason*: ${err.message}`
             }
           }
         ],

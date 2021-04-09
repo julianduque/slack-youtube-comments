@@ -101,11 +101,10 @@ module.exports = {
         channel: userId,
         blocks: [
           {
-
             type: 'section',
             text: {
               type: 'mrkdwn',
-              text: `❌ I failed to retrieve Subscription List - *Reason*: ${err.message}`
+              text: `❌ I failed to retrieve Subscription List.\n\n*Reason*: ${err.message}`
             }
           }
         ],
