@@ -89,11 +89,10 @@ module.exports = {
         channel: userId,
         blocks: [
           {
-
             type: 'section',
             text: {
               type: 'mrkdwn',
-              text: `❌ I failed to subscribe on that video - *Reason*: ${err.message}`
+              text: `❌ I failed to subscribe on that video.\n\n*Reason*: ${err.message}`
             }
           }
         ],
@@ -111,12 +110,15 @@ module.exports = {
             type: 'mrkdwn',
             text: `👋 Howdy <@${userId}>,
 
-💬 I'll keep you posted about comments from 📺 *${title}*
+💬 I'll keep you posted about comments from\n📺 *${title}*
               `
           }
+        },
+        {
+          type: 'divider'
         }
       ],
-      text: `Hola <@${userId}>`
+      text: `I'll keep you posted about comments from ${title}`
     })
   }
 }
