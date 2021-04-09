@@ -116,7 +116,7 @@ module.exports = {
           }
         }
       ],
-      text: `Hola <@${userId}>`
+      text: `I'll keep you posted about comments from ${title}`
     })
   }
 }
