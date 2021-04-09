@@ -89,7 +89,6 @@ module.exports = {
         channel: userId,
         blocks: [
           {
-
             type: 'section',
             text: {
               type: 'mrkdwn',

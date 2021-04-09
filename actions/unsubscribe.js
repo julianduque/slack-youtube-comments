@@ -49,8 +49,7 @@ module.exports = {
             type: 'section',
             text: {
               type: 'mrkdwn',
-              text: `You'll not receive more comment notifications from:\n📺 *${videoInfo.Title__c}*
-                `
+              text: `You'll not receive more comment notifications from:\n📺 *${videoInfo.Title__c}*`
             }
           },
           {
